@@ -30,7 +30,7 @@ class Phone(Field):
 class Birthday(Field):
     def __init__(self, value):
         if len(value) != 10 or not datetime.strptime(value, "%d.%m.%Y"):
-            raise ValueError("Invalidd birthday format. DD.MM.YYYY required")
+            raise ValueError("Invalid birthday format. DD.MM.YYYY required")
         super().__init__(value)
 
 class Record:
@@ -219,7 +219,7 @@ def main():
                     
             except ValueError as e:
                 print(e)
-                print("Invalid command format. Use 'add-birthday [name] [birth date]'")
+                print("Invalid command format. Use 'add-birthday [name] [birth date DD.MM.YYYY]'")
 
         elif command == "show_birthday":
             try:
